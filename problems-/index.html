@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leetcode problems</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        // let flowerbed = [1,0,0,0,1,0,0]
+        // let n = 2
+
+        // function flw (f, n){
+        //     let result = [];
+
+        //     for(let i = 0; i < f.length; i++){
+
+        //         let left = i === 0 ? 0 : f[i - 1];
+        //         let right = i === f.length - 1 ? 0 : f[i + 1];
+
+        //         if(f[i] === 0 && left === 0 && right === 0){
+        //         result.push(f[i])
+        //         f[i] = 1
+        //         n--
+        //         }
+        //         else{
+        //         continue
+        //         }
+
+        //         console.log(result)
+
+        //     }
+
+
+        //     return console.log(n <= 0)
+        // }
+
+        // flw(flowerbed, n)
+
+            let s = 'A'.repeat(100090) + 'e' + 'i' + 'o' + 'u';
+
+            function strV(str) {
+                let vowels = str.match(/[aeiou]/gi) || []
+                let vowelsSet = new Set(vowels)
+                let strArr = str.split('')
+                let indexes = strArr.map((item, i) => {
+                    return vowelsSet.has(item) ? i : null
+                }).filter(i => i !== null);
+                let indexesSet = new Set(indexes)
+                let reversedVowels = [...vowels].reverse()
+                let result = strArr.map((item, i) => {
+                    return indexesSet.has(i) ? reversedVowels.shift() : item
+                })
+
+
+
+                    console.log(result.join(''))
+                }
+
+            strV(s)
+
+    </script>
+</body>
+</html>
