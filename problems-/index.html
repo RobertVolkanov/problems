@@ -39,27 +39,38 @@
 
         // flw(flowerbed, n)
 
-            let s = 'A'.repeat(100090) + 'e' + 'i' + 'o' + 'u';
+            // let s = 'A'.repeat(100090) + 'e' + 'i' + 'o' + 'u';
 
-            function strV(str) {
-                let vowels = str.match(/[aeiou]/gi) || []
-                let vowelsSet = new Set(vowels)
-                let strArr = str.split('')
-                let indexes = strArr.map((item, i) => {
-                    return vowelsSet.has(item) ? i : null
-                }).filter(i => i !== null);
-                let indexesSet = new Set(indexes)
-                let reversedVowels = [...vowels].reverse()
-                let result = strArr.map((item, i) => {
-                    return indexesSet.has(i) ? reversedVowels.shift() : item
-                })
+            // function strV(str) {
+            //     let vowels = str.match(/[aeiou]/gi) || []
+            //     let vowelsSet = new Set(vowels)
+            //     let strArr = str.split('')
+            //     let indexes = strArr.map((item, i) => {
+            //         return vowelsSet.has(item) ? i : null
+            //     }).filter(i => i !== null);
+            //     let indexesSet = new Set(indexes)
+            //     let reversedVowels = [...vowels].reverse()
+            //     let result = strArr.map((item, i) => {
+            //         return indexesSet.has(i) ? reversedVowels.shift() : item
+            //     })
 
 
 
-                    console.log(result.join(''))
+            //         console.log(result.join(''))
+            //     }
+
+            // strV(s)
+
+
+            let s = '  hello    world   ';
+
+                function strR(s) {
+                    let result;
+                    result = s.trim().split(' ').reverse().join(' ').replace(/\s+/g, ' ')
+                    console.log(result)
                 }
 
-            strV(s)
+                strR(s)
 
     </script>
 </body>
